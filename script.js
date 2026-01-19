@@ -1,22 +1,58 @@
+// DOM References
+const numButtons = document.querySelectorAll(".buttons > .number");
+const opButtons = document.querySelectorAll(".buttons > .operator")
+
+// Global variables
+let a = null
+let b = null
+let operator = null
 
 // Operation functions
-function add(a, b) {
-    return a + b;
-}
+function operate() {
+    let val = 0
+    console.log(a)
+    console.log(b)
+    console.log(operator)
+    if (a != null && b != null && operator != null) {
+        switch(operator) {
+            case "+":
+                val = a+b;
+                break;
+            case "-":
+                val = a-b;
+                break;
+            case "*":
+                val = a*b;
+                break;
+            case "/":
+                val = a/b;
+                break;
+        }
 
-function subtract(a, b) {
-    return a - b;
-}
+        console.log(val)
+    }
 
-function multiply(a, b) {
-    return a * b;
-}
+};
 
-function divide(a, b) {
-    return a / b;
-}
+// Click listeners
+numButtons.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        const id = e.target.id;
 
-// Calculation Func
-function operate(a, b, operand) {
-    
-}
+        if (a == null) {
+            a = parseInt(id);
+        } else {
+            b = parseInt(id);
+        }
+
+    })
+});
+
+opButtons.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        const id = e.target.id;
+
+        operator = id;
+
+    })
+});

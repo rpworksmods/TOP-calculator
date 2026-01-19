@@ -13,11 +13,13 @@
     <div class="container">
         <div class="calc-layout">
             <div class="display">
-                1 + 2
-                <p class="result">= 3</p>
+                <div class="equation">
+                    <div id="a"></div><div id="operator"></div><div id="b"></div>
+                </div>
+                <p class="result"></p>
             </div>
             <div class="buttons">
-                <button id="clear">AC</button>
+                <button id="clear" onclick="clearEquation()">AC</button>
                 <button id="parenthesis" disabled>( )</button>
                 <button id="%" class="operator" disabled>%</button>
                 <button id="/" class="operator">/</button>
@@ -34,9 +36,9 @@
                 <button id="3" class="number">3</button>
                 <button id="+" class="operator">+</button>
                 <button id="0" class="number">0</button>
-                <button id="decimal">.</button>
-                <button id="delete">Del</button>
-                <button id="equals" onclick="operate()">=</button>
+                <button id="decimal" onclick="decimal()">.</button>
+                <button id="delete" onclick="backspace()">Del</button>
+                <button id="equals" onclick="equals()">=</button>
             </div>
         </div>
     </div>

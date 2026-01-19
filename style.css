@@ -60,12 +60,17 @@ body {
     margin: 0px 15px 0px 15px;
     border: 1px solid rgb(65, 65, 65);
     border-radius:20px;
+    min-height:80px;
 }
 
 .display p {
     margin:0;
     font-size:20px;
     color: rgb(184, 184, 184);
+}
+
+.equation {
+    display:flex;
 }
 
 .buttons {
